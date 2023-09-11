@@ -1,0 +1,15 @@
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\bin\Debug\net7.0\Verbum_Panis.exe
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\bin\Debug\net7.0\Verbum_Panis.deps.json
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\bin\Debug\net7.0\Verbum_Panis.runtimeconfig.json
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\bin\Debug\net7.0\Verbum_Panis.dll
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\bin\Debug\net7.0\Verbum_Panis.pdb
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\Verbum_Panis.csproj.AssemblyReference.cache
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\Verbum_Panis.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\Verbum_Panis.AssemblyInfoInputs.cache
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\Verbum_Panis.AssemblyInfo.cs
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\Verbum_Panis.csproj.CoreCompileInputs.cache
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\Verbum_Panis.dll
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\refint\Verbum_Panis.dll
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\Verbum_Panis.pdb
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\Verbum_Panis.genruntimeconfig.cache
+C:\Users\LENOVO\Desktop\Projeto_final_bloco_01\Verbum_Panis\obj\Debug\net7.0\ref\Verbum_Panis.dll
