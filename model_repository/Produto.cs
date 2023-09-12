@@ -9,10 +9,10 @@ namespace Verbum_Panis.model_repository
     public abstract class Produto
     {
        
-            int id;
-            int tipo;
-            string nome;
-            decimal preco;
+           private  int id;
+           private  int tipo;
+           private string nome;
+           private decimal preco;
 
             public Produto(int id, int tipo, string nome, decimal preco)
             {

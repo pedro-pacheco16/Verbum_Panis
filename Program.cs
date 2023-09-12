@@ -13,8 +13,9 @@ namespace Verbum_Panis
         static void Main(string[] args)
         {
                 int opcao, id, tipo, NumeroDePg;
-                string? nome,autor;
+                string? nome, autor, cor, estilo, material;
                 decimal preco;
+                float tamanho;
 
             ProdutoController produto = new();
 
@@ -46,7 +47,7 @@ namespace Verbum_Panis
 
                     opcao = Convert.ToInt32(Console.ReadLine());
 
-                }catch (FormatException)
+                } catch (FormatException)
                 {
                     Console.WriteLine("Digite uma opção de 1 a 6!");
                     opcao = 0;
@@ -63,30 +64,76 @@ namespace Verbum_Panis
                 switch (opcao)
                 {
                     case 1:
-                        Console.WriteLine("Cadastrar Novo Produto:\n");
+                        Console.WriteLine("\nCadastrar Novo Produto:\n");
 
-                        Console.WriteLine("Digite o Nome do Produto:");
-                        nome = Console.ReadLine();
 
-                        Console.WriteLine("Digite o Número de Identificação do Produto:");
-                        id =Convert.ToInt32(Console.ReadLine());
+                        do
+                        {
+                            Console.WriteLine("Digite o Tipo do Produto:");
+                            tipo = Convert.ToInt32(Console.ReadLine());
 
-                        Console.WriteLine("Digite o Tipo do Produto:");
-                        tipo = Convert.ToInt32(Console.ReadLine());
+                            if (tipo >= 1 && tipo <= 7)
+                            {
+                                break;
+                            } else
+                            {
+                                Console.WriteLine("\nDigite uma opção válida de 1 a 7!");
+                            }
 
-                        Console.WriteLine("Digite o Preço do Produto:");
-                        preco = Convert.ToDecimal(Console.ReadLine());
+                        } while (true);
 
-                        Console.WriteLine("Digite o Autor do Livro:");
-                        autor = (Console.ReadLine());
+                        switch (tipo)
+                        {
 
-                        Console.WriteLine("Digite o Número de Páginas do Produto:");
-                        NumeroDePg = Convert.ToInt32(Console.ReadLine());
+                            case 1:
+                                Console.WriteLine("\nLivro:\n");
 
-                        produto.Cadastrar(new Livro( id, tipo, nome, preco, autor, NumeroDePg));
+                                Console.WriteLine("Digite o Nome do Livro:");
+                                nome = Console.ReadLine();
 
-                        KeyPress();
-                        break;
+
+                                Console.WriteLine("Digite o Autor do Livro:");
+                                autor = (Console.ReadLine());
+
+                                Console.WriteLine("Digite o Preço do Produto:");
+                                preco = Convert.ToDecimal(Console.ReadLine());
+
+                                Console.WriteLine("Digite o Número de Páginas do Produto:");
+                                NumeroDePg = Convert.ToInt32(Console.ReadLine());
+
+                                produto.Cadastrar(new Livro(produto.GerarNumeros(), tipo, nome, preco, autor, NumeroDePg));
+
+                                break;
+
+                            case 2:
+                                Console.WriteLine("\nImagem:\n");
+
+                                Console.WriteLine("Digite o Nome da Imagem:");
+                                nome = Console.ReadLine();
+
+
+                                Console.WriteLine("Digite o Preço do Produto:");
+                                preco = Convert.ToDecimal(Console.ReadLine());
+
+                                Console.WriteLine("Digite o Tamanho da Imagem:");
+                                tamanho = Convert.ToSingle(Console.ReadLine() );
+
+                                Console.WriteLine("Digite a Cor da Imagem:");
+                                cor = Console.ReadLine();
+
+                                Console.WriteLine("Digite o Estilo da Imagem:");
+                                estilo = Console.ReadLine();
+
+                                Console.WriteLine("Digite o Material da Imagem:");
+                                material = Console.ReadLine();
+
+                                produto.Cadastrar(new Imagem(produto.GerarNumeros(), tipo, nome, preco, estilo, material, cor, tamanho));
+
+                                break;
+                        }
+
+                    KeyPress();
+                    break;
 
                     case 2:
                         Console.WriteLine("Listar Todos os Produtos\n");
@@ -115,39 +162,85 @@ namespace Verbum_Panis
 
                         var Produto = produto.BuscarNalista(id);
 
-                        if (Produto is not null)
-                        {
+                          if (Produto is not null)
+                          {
 
-                            Console.WriteLine("Digite o Nome do Produto:\n");
-                            nome = Console.ReadLine();
+                              do
+                              {
+                                Console.WriteLine("Digite o Tipo do Produto:");
+                                tipo = Convert.ToInt32(Console.ReadLine());
 
-                            Console.WriteLine("Digite o Preço do Produto:");
-                            preco = Convert.ToDecimal(Console.ReadLine());
+                                if (tipo >= 1 && tipo <= 7)
+                                {
+                                    break;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Digite uma opção válida de 1 a 7!");
+                                }
+                              } while (true);
 
-                            Console.WriteLine("Digite o Autor do Livro:");
-                            autor = (Console.ReadLine());
+                                switch (tipo)
+                                {
 
-                            Console.WriteLine("Digite o Número de Páginas do Produto:");
-                            NumeroDePg = Convert.ToInt32(Console.ReadLine());
+                                    case 1:
+                                        Console.WriteLine("Livro:");
 
-                            Console.WriteLine("Digite o tipo do Produto:");
-                            tipo = Convert.ToInt32(Console.ReadLine());
+                                        Console.WriteLine("Digite o Nome do Livro:");
+                                        nome = Console.ReadLine();
 
-                            produto.Atualizar(new Livro(id, tipo, nome, preco, autor, NumeroDePg));
+                                        Console.WriteLine("Digite o Autor do Livro:");
+                                        autor = (Console.ReadLine());
 
-                        }
-                        else
-                        {
-                            Console.WriteLine($"O Produto de Número {id} não foi encontrado!");
-                        }
+                                        Console.WriteLine("Digite o Preço do Produto:");
+                                        preco = Convert.ToDecimal(Console.ReadLine());
 
-                        
-                        break;
+                                        Console.WriteLine("Digite o Número de Páginas do Produto:");
+                                        NumeroDePg = Convert.ToInt32(Console.ReadLine());
+
+                                        produto.Atualizar(new Livro(id, tipo, nome, preco, autor, NumeroDePg));
+
+                                        break;
+
+                                    case 2:
+                                        Console.WriteLine("Imagem:\n");
+
+                                        Console.WriteLine("Digite o Nome da Imagem:");
+                                        nome = Console.ReadLine();
+
+
+                                        Console.WriteLine("Digite o Preço do Produto:");
+                                        preco = Convert.ToDecimal(Console.ReadLine());
+
+                                        Console.WriteLine("Digite o Tamanho da Imagem:");
+                                        tamanho = Convert.ToSingle(Console.ReadLine() + "cm");
+
+                                        Console.WriteLine("Digite a Cor da Imagem:");
+                                        cor = Console.ReadLine();
+
+                                        Console.WriteLine("Digite o Estilo da Imagem:");
+                                        estilo = Console.ReadLine();
+
+                                        Console.WriteLine("Digite o Material da Imagem:");
+                                        material = Console.ReadLine();
+
+                                        produto.Atualizar(new Imagem(id, tipo, nome, preco, estilo, material, cor, tamanho));
+
+                                         break;
+
+                                }        
+
+                          }else
+                          {
+                             Console.WriteLine($"O Produto de Número {id} não foi encontrado!");
+                          }
+                          KeyPress();
+                          break;
 
                     case 5:
                         Console.WriteLine("Apagar Produto\n");
 
-                        Console.WriteLine("Digite o Número de Identificação do Produto:\n\n");
+                        Console.WriteLine("Digite o Número de Identificação do Produto:\n");
                         id = Convert.ToInt32(Console.ReadLine());
 
                         produto.Deletar(id);
@@ -158,39 +251,35 @@ namespace Verbum_Panis
                     case 6:
                         Console.WriteLine("Sair\n");
 
-                        KeyPress();
                         break;
 
                     default:
                         Console.WriteLine("\nOpção Inválida!\n");
 
-                        KeyPress();
                         break;
-                }
+
+                    }
 
 
-
-                static void sobre()
-                {
-                    Console.WriteLine("\n************************************************************************");
-                    Console.WriteLine("Verbum Panis artigos Sacros");
-                    Console.WriteLine("Pedro Augusto Pacheco de Souza Santos - pedroaugustopacheco16@gmail.com");
-                    Console.WriteLine("github.com/pedro-pacheco16");
-                    Console.WriteLine("************************************************************************");
-
-                }
-                static void KeyPress()
-                {
-                    do
-                    {
-                        Console.Write("\nPressione Enter para Continuar...\"");
-                        ConsoleKeyInfo = Console.ReadKey();
-                    } while (ConsoleKeyInfo.Key != ConsoleKey.Enter);
-                }
 
             }
         }
+                    static void sobre()
+                    {
+                       Console.WriteLine("\n************************************************************************");
+                       Console.WriteLine("Verbum Panis artigos Sacros");
+                       Console.WriteLine("Pedro Augusto Pacheco de Souza Santos - pedroaugustopacheco16@gmail.com");
+                       Console.WriteLine("************************************************************************");
+
+                    }
+                    static void KeyPress()
+                    {
+                      do
+                      {
+                       Console.Write("\nPressione Enter para Continuar...\n");
+                       ConsoleKeyInfo = Console.ReadKey();
+                      } while (ConsoleKeyInfo.Key != ConsoleKey.Enter);
+                    }
     }
 }
-
     

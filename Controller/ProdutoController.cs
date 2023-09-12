@@ -83,7 +83,12 @@ namespace Verbum_Panis.Controller
                 produto.visualizar();
             }
         }
-            public Produto? BuscarNalista(int id)
+
+        public int GerarNumeros()
+        {
+            return ++id;
+        }
+        public Produto? BuscarNalista(int id)
             {
                 foreach (var produto in produtosLista)
                 {
@@ -95,6 +100,7 @@ namespace Verbum_Panis.Controller
                 }
                 return null;
             }
+
 
         }
     }

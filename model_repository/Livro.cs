@@ -8,8 +8,8 @@ namespace Verbum_Panis.model_repository
 {
     public class Livro : Produto
     {
-        string autor;
-        int NumeroDePg;
+        private string autor;
+        private int NumeroDePg;
         public Livro(int id, int tipo, string nome, decimal preco, string autor, int NumeroDePg) : base(id, tipo, nome, preco)
         {
             this.autor = autor;
